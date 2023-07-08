@@ -27,7 +27,7 @@
 
   <title>
 
-    お天気アプリ
+    ド忘れ防止継続!持ち物リスト
 
   </title>
 
@@ -67,7 +67,9 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.0/leaflet.js"></script>
   <script src="./assets/js/leaflet.rainviewer.js"></script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.0/leaflet.css">
-
+  
+  <link rel="stylesheet" href="wasurenashi_app/index.css">
+  <script type="text/javascript" src="wasurenashi_app/index.js"></script>
 
 </head>
 
@@ -93,7 +95,7 @@
         aria-hidden="true" id="iconSidenav"></i>
       <a class="navbar-brand m-0" href="index.html">
         <img src="./assets/img/logo-ct.png" class="navbar-brand-img h-100" alt="main_logo">
-        <span class="ms-1 font-weight-bold text-white">メニュー</span>
+        <span class="ms-1 font-weight-bold text-white">MENU</span>
       </a>
     </div>
 
@@ -118,24 +120,31 @@
               <i class="material-icons opacity-10">dashboard</i>
             </div>
 
-            <span class="nav-link-text ms-1">Dashboard</span>
+            <span class="nav-link-text ms-1">トップページ</span>
           </a>
         </li>
 
-
-        <!--
         <li class="nav-item">
-          <a class="nav-link text-white " href="/pages/tables.html">
+          <a class="nav-link text-white " href="index.html">
 
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
+              <i class="material-icons opacity-10">dashboard</i>
             </div>
 
-            <span class="nav-link-text ms-1">Tables</span>
+            <span class="nav-link-text ms-1">履歴</span>
           </a>
         </li>
-      -->
 
+        <li class="nav-item">
+          <a class="nav-link text-white " href="index.html">
+
+            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="material-icons opacity-10">dashboard</i>
+            </div>
+
+            <span class="nav-link-text ms-1">使い方</span>
+          </a>
+        </li>
 
       </ul>
     </div>
@@ -186,13 +195,13 @@
 
 
       <div class="row">
-        <div class="col-lg-7 position-relative z-index-2">
+        <div class="col-lg-12 position-relative z-index-2">
           <div class="card card-plain mb-4">
             <div class="card-body p-3">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <h2 class="font-weight-bolder mb-0">お天気情報</h2>
+                    <h2 class="font-weight-bolder mb-0">ド忘れ防止継続!　持ち物リスト</h2>
                   </div>
 
                 </div>
@@ -209,126 +218,24 @@
             <div class="card-header p-3 pt-2">
               <div class="pt-1">
 
-                <h5>本日の天気</h5>
-                <p class="mb-0 area" style="font-size: 18px;">-</p>
-                <div class="row">
-                  <div class="col-lg-4 col-sm-4 text-center">
-                    <img src="" class="weather_icon"
-                      style="width: 100%;">
-                    <h5 class="weather">-</h5>
-                    <h6 class="wind">-</h6>
-                    <h6 class="wave">-</h6>
-                  </div>
-                  <!--<div class="col-lg-7 col-sm-7" style="align-items:center;display: grid;">-->
-                  <div class="col-lg-7 col-sm-7">
-                    <h6>【コメント】</h6>
-                    <p class="mb-0" id="comment" style="font-size: 14px;"></p>
-                  </div>
-                </div>
+                <h2>忘れ物を減らしましょう!</h2>
+                <h5>現在 xx 日間継続中!</h5>
+
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-lg-5 col-sm-5">
-          <div class="card  mb-2">
-            <div class="card-header p-3 pt-2">
-              <div class="pt-1">
-                <h5>明日の天気</h5>
-                <p class="mb-0 area" style="font-size: 18px;">-</p>
-                <div class="row">
-                  <div class="text-center">
-                    <img src="" class="weather_icon"
-                      style="width: 100%;">
-                    <h5 class="weather">-</h5>
-                    <h6 class="wind">-</h6>
-                    <h6 class="wave">-</h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <ol>
+        <li><input id="id01" type="text" name="example1"><button onclick="test1('id01')">削除</button></li>
+      </ol>
+      <h3><button>項目追加</button></h3>
+        <br><br>
+        <h3 style="text-align:right" ><button>帰宅</button></h3>
+        
 
-        <div class="col-lg-5 col-sm-5 mt-sm-0 mt-4">
-          <div class="card  mb-2">
-            <div class="card-header p-3 pt-2">
-              <div class="pt-1">
-                <h5>明後日の天気</h5>
-                <p class="mb-0 area" style="font-size: 18px;">-</p>
-                <div class="row">
-                  <div class="text-center">
-                    <img src="" class="weather_icon"
-                      style="width: 100%;">
-                    <h5 class="weather">-</h5>
-                    <h6 class="wind">-</h6>
-                    <h6 class="wave">-</h6>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="row mt-4">
-        <div class="col-10 mobile">
-          <div class="card mb-4 ">
-            <div class="d-flex">
-              <h6 class="mt-3 mb-2 ms-3 ">アメダスデータ(岡山)</h6>
-            </div>
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-8 col-md-8">
-                  <canvas id="okayama_chart" width="800" height="500"></canvas>
-
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-     
-      <div class="row mt-4" style="height: 500px;">
-        <div class="col-10 mobile">
-          <div class="card mb-4 ">
-            <div class="d-flex">
-              <h6 class="mt-3 mb-2 ms-3 ">雨雲レーダー</h6>
-            </div>
-            <div class="card-body p-3">
-              <div class="row">
-                <div class="col-lg-6 col-md-7">
-
-                  <div style="float:left;width:100%,;font-size:14px;">
-                    <input type="button" onclick="stop(); showFrame(animationPosition - 1); return;" value="戻す" />
-                    <input type="button" onclick="playStop();" value="スタート&ストップ" />
-                    <input type="button" onclick="stop(); showFrame(animationPosition + 1); return;" value="進める" />
-
-                  </div>
-                  <div style="float:left;width:100%">
-                    <div id="timestamp"
-                      style="font-family: Arial, Helvetica, sans-serif;text-align:left; font-size:12px;color:#FF0000">
-                      時間</div>
-                  </div>
-                  <div style="height: 360px;">
-                    <div id="mapid" style="position: absolute; top: 130px; left: 0; bottom: 0; right: 0;height: 330px;">
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+      
     </div>
 
 
@@ -358,22 +265,19 @@
 
 
   <div class="fixed-plugin">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="material-icons py-2">settings</i>
-    </a>
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3">
         <div class="float-start">
-          <h5 class="mt-3 mb-0">設定</h5>
-          <p>各種設定メニュー</p>
+          <h5 class="mt-3 mb-0">設定ーsetting</h5>
+          <!--<p>各種設定メニュー</p>
         </div>
         <div class="float-end mt-4">
           <button class="btn btn-link text-dark p-0 fixed-plugin-close-button">
             <i class="material-icons">clear</i>
           </button>
-        </div>
+        </div>-->
         <!-- End Toggle Button -->
-      </div>
+      <!--</div>
       <hr class="horizontal dark my-1">
       <div class="card-body pt-sm-3 pt-0">
 
@@ -387,7 +291,16 @@
 
       </div>
     </div>
-  </div>
+  </div> -->
+  <br>
+  <button>ID・パスワード・名前の変更</button>
+  <!--履歴は消えない-->
+  <br><br>
+  <button>全ての履歴の削除</button>
+  <!--ID・パスワード・名前は消えない-->
+  <br><br>
+  <button>リセット</button>
+  <!--全て消える-->
 
 
 
@@ -412,8 +325,8 @@
 
 
   <script>
-   getWeatherData();
-   getAmedasData();
+   //getWeatherData();
+   //getAmedasData();
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {
