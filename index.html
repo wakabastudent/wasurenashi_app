@@ -24,7 +24,6 @@
 
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
-
   <title>
 
     ド忘れ防止継続!持ち物リスト
@@ -69,7 +68,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.0/leaflet.css">
   
   <link rel="stylesheet" href="wasurenashi_app/index.css">
-  <script type="text/javascript" src="wasurenashi_app/index.js"></script>
+  <script type="text/javascript" src="./assets/js/index.js"></script>
 
 </head>
 
@@ -105,7 +104,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
-
+        <p style="text-align:center">2023/7/15</p>
 
 
 
@@ -227,12 +226,10 @@
         </div>
       </div>
 
-      <ol>
-        <li><input id="id01" type="text" name="example1"><button onclick="test1('id01')">削除</button></li>
-      </ol>
-      <h3><button>項目追加</button></h3>
+      <ol id="1-2"></ol>
+      <h3><button onclick="a2('1-2')">項目追加</button></h3>
         <br><br>
-        <h3 style="text-align:right" ><button>帰宅</button></h3>
+        <h3 style="text-align:right" id="1-3"><button onclick="a3('1-3')">帰宅</button></h3>
         
 
       
@@ -293,6 +290,8 @@
     </div>
   </div> -->
   <br>
+  <button>日付設定</button>
+  <br><br>
   <button>ID・パスワード・名前の変更</button>
   <!--履歴は消えない-->
   <br><br>

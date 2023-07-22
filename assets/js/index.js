@@ -4,10 +4,14 @@ function a1(a) {
 }
 
 function a2(a){
-    var array =[
+    /**var array =[
         [<ol>
             <li><input id="1-1" type="text" name="example1"></input><button onclick="a1('1-1')">削除</button></li>
           </ol>],
+    ]
+    */
+    var array =[
+        ""
     ]
     array.forEach(function (value, index) {
         console.log(index + value)
