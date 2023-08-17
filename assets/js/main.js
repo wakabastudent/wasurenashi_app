@@ -46,7 +46,7 @@ function loginToServer() {
       var re = data.result;
       if (re === "OK") {
 
-        location.href = "../index.html?name=" + data.name + "&email=" + data.email
+        location.href = "../index.html?name=" + data.name + "&email=" + data.email + "&id=" + data.id
       } else {
         alert("ログインできませんでした。メールアドレス、パスワードを確認してください。")
       }
@@ -93,7 +93,7 @@ function createAccout() {
       console.log(data.result);
       var re = data.result;
       if (re === "OK") {
-        location.href = "../index.html?name=" + data.name + "&email=" + data.email
+        location.href = "../index.html?name=" + data.name + "&email=" + data.email + "&id=" + data.id
       } else if (re === "NG1") {
         alert("すでに使用されているメールアドレスです。別のメールアドレスで登録してください。")
       } else {
@@ -116,3 +116,42 @@ function setDisplayName(target) {
 
 
 }
+
+function getParamId() {
+  // URLを取得
+  let url = new URL(window.location.href);
+  // URLSearchParamsオブジェクトを取得
+  let params = url.searchParams;
+  return params.get('id')
+}
+//項目リストをDBから取得する
+function getListData(id){
+  //TODO:本番用と切り替える
+  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
+  const API_URL = "http://localhost:9000/.netlify/functions/GetList?id="+id;
+  fetch(API_URL, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data.items);
+      var items = data.items;
+      for(var i=0; i<items.length; i++){
+        var td1 = '<li id="row-'+i+'"><input id="1-1" class="1-5" type="text" name="example1" value = "'+items[i]+'"></input><button class=1-4 onclick="a1(\'row-'+i+'\')">削除</button></li>'
+        $("#1-2").append(td1)
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      alert("通信エラーが発生しました。再度送信ください。");
+    });
+}
+
+
+
+
+
+
+

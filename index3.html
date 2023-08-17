@@ -343,27 +343,7 @@
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
 
-    var map = L.map('mapid').setView([34.699887, 133.75], 7); // 日本全体表示
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: "&copy; <a href='https://www.openstreetmap.org/copyright' target='_blank'>OpenStreetMap</a>"
-    }).addTo(map);
-    /**
-     * RainViewer radar animation part
-     * @type {number[]}
-     */
-    var apiData = {};
-    var mapFrames = [];
-    var lastPastFramePosition = -1;
-    var radarLayers = [];
-    var optionKind = 'radar'; // can be 'radar' or 'satellite'
-    var optionTileSize = 256; // can be 256 or 512.
-    var optionColorScheme = 2; // from 0 to 8. Check the https://rainviewer.com/api/color-schemes.html for additional information
-    var optionSmoothData = 1; // 0 - not smooth, 1 - smooth
-    var optionSnowColors = 1; // 0 - do not show snow colors, 1 - show snow colors
-    var animationPosition = 0;
-    var animationTimer = false;
-    var loadingTilesCount = 0;
-    var loadedTilesCount = 0;
+ 
 
 
 
@@ -391,7 +371,31 @@
       console.log('Hello');
   }
   
-   
+  function retrieveGETqs() {
+      var query = window.location.search.substring(1);
+      return query;
+      /* 引数がない時は処理しない */
+      if (!query) return false;
+    }
+    $(function () {
+      //各'a'に共通のクラス名をつけることで、一部のリンクだけがパラメータ引き継ぎをできる用意も可能
+      jQuery('a').click(function () {
+        //リンク先を取得
+        var target_url = $(this).attr("href");
+        //パラメータを取得
+        var str = retrieveGETqs();
+        var prm = decodeURIComponent(str);
+        if (prm) {
+          //target_urlに'？'を含む場合
+          if (target_url.indexOf('?') != -1) {
+            //追加パラメータの先頭文字列を'&'に置換
+            $('a').attr('href', target_url + '&' + prm);
+          } else {
+            $('a').attr('href', target_url + '?' + prm);
+          }
+        }
+      })
+    });
  
   </script>
 
