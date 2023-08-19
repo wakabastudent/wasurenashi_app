@@ -27,6 +27,7 @@ function a3(a) {
     });
     $("#1-6").replaceWith('<h3 style="text-align:right" id="2-1"><button id="2-2" onclick="b1()">完了</button></h3>');
     $("#1-7").prop('disabled', true);
+    createItem()
 }
 
 //location.href="index2.html"　disabled $("#1-4").replaceWith('<input type="checkbox">');
