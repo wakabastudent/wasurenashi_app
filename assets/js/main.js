@@ -163,10 +163,11 @@ function createItem() {
     result.push(item[i].value)
   }
   
+  var userid = getParamId()
 
-  //コメントをスラックに送信する
   let body = {
     items: result,
+    id: userid
   };
 
   // バックエンドAPIへPOST
