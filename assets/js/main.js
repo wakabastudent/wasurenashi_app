@@ -191,6 +191,59 @@ function createItem() {
     });
 }
 
+function createHistory() {
+  //TODO:本番用と切り替える
+  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
+  const API_URL = "http://localhost:9000/.netlify/functions/CreateListResult";
+
+
+  //入力内容を取得
+  var item = document.getElementsByClassName("1-5");
+  var check = document.getElementsByClassName("check");
+  var result = []
+
+  
+  for(var i = 0; i<item.length; i++){
+    console.log(check[i].checked)
+    var json = {
+      "item":item[i].value,
+      "check":check[i].checked
+    }
+    result.push(json)
+  }
+  
+  var userid = getParamId()
+
+  let body = {
+    items: result,
+    id: userid
+  };
+
+  // バックエンドAPIへPOST
+  const payload = JSON.stringify(body);
+
+  fetch(API_URL, {
+    method: "POST",
+    body: payload,
+  })
+
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data.result);
+      alert(data.result)
+    })
+    .catch(error => {
+      console.log(error);
+      alert("通信エラーが発生しました。再度送信ください。");
+    });
+}
+
+
+
+
+
 
 
 

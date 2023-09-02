@@ -20,7 +20,7 @@ function a2(a){
 
 function a3(a) {
     $(".1-4").each(function(i, elem) {
-        $(elem).replaceWith('<input type="checkbox">');
+        $(elem).replaceWith('<input type="checkbox" class="check">');
     });
     $(".1-5").each(function(i, elem) {
         $(elem).prop('disabled', true);
@@ -34,6 +34,7 @@ function a3(a) {
 
 function b1() {
     location.href="index3.html"
+    createHistory()
 }
 
 function d1() {
