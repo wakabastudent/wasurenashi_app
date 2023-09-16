@@ -33,8 +33,8 @@ function a3(a) {
 //location.href="index2.html"　disabled $("#1-4").replaceWith('<input type="checkbox">');
 
 function b1() {
-    location.href="index3.html"
     createHistory()
+    //location.href="index3.html"
 }
 
 function d1() {

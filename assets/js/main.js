@@ -231,8 +231,7 @@ function createHistory() {
       return response.json();
     })
     .then((data) => {
-      console.log(data.result);
-      alert(data.result)
+      location.href="index3.html?NGCount="+data.NGCount+"&AllCount="+data.AllCount+"&rate="+data.rate
     })
     .catch(error => {
       console.log(error);

@@ -355,6 +355,15 @@
       setTimeout(function () {
           hide_loading();
       }, 1000);
+      let url = new URL(window.location.href);
+  // URLSearchParamsオブジェクトを取得
+  let params = url.searchParams;
+  var NGCount = params.get('NGCount')
+  var AllCount = params.get('AllCount')
+  var rate = params.get('rate')
+  alert(NGCount)
+      alert(AllCount)
+      alert(rate)
   })
 
   //ローディング表示
