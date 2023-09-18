@@ -124,6 +124,20 @@ function getParamId() {
   let params = url.searchParams;
   return params.get('id')
 }
+function getParamName() {
+  // URLを取得
+  let url = new URL(window.location.href);
+  // URLSearchParamsオブジェクトを取得
+  let params = url.searchParams;
+  return params.get('name')
+}
+function getParamEmail() {
+  // URLを取得
+  let url = new URL(window.location.href);
+  // URLSearchParamsオブジェクトを取得
+  let params = url.searchParams;
+  return params.get('email')
+}
 //項目リストをDBから取得する
 function getListData(id){
   //TODO:本番用と切り替える
@@ -183,7 +197,6 @@ function createItem() {
     })
     .then((data) => {
       console.log(data.result);
-      alert(data.result)
     })
     .catch(error => {
       console.log(error);
@@ -231,7 +244,7 @@ function createHistory() {
       return response.json();
     })
     .then((data) => {
-      location.href="index3.html?NGCount="+data.NGCount+"&AllCount="+data.AllCount+"&rate="+data.rate
+      location.href="index3.html?NGCount="+data.NGCount+"&AllCount="+data.AllCount+"&rate="+data.rate+"&id="+getParamId()+"&name="+getParamName()+"&email="+getParamEmail()
     })
     .catch(error => {
       console.log(error);
@@ -240,7 +253,28 @@ function createHistory() {
 }
 
 
-
+function getHistory(id){
+  //TODO:本番用と切り替える
+  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
+  const API_URL = "http://localhost:9000/.netlify/functions/GetResultHistory?id="+id;
+  fetch(API_URL, {
+    method: "GET",
+  })
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      var dayCount = data.continues;
+      var elem5 = document.getElementById("day");
+      elem5.textContent = dayCount
+      var elem6 = document.getElementById("day2");
+      elem6.textContent = dayCount
+    })
+    .catch(error => {
+      console.log(error);
+      alert("通信エラーが発生しました。再度送信ください。");
+    });
+}
 
 
 

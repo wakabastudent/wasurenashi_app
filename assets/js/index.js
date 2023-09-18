@@ -38,5 +38,5 @@ function b1() {
 }
 
 function d1() {
-    location.href="index.html"
+    location.href="index.html?id="+getParamId()+"&name="+getParamName()+"&email="+getParamEmail()
 }
