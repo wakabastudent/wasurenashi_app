@@ -104,7 +104,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
-        <p style="text-align:center">2023/7/15</p>
+        <p style="text-align:center" id="display_name"></p>
 
 
 
@@ -123,7 +123,8 @@
           </a>
         </li>
 
-        <li class="nav-item">
+        <!--
+          <li class="nav-item">
           <a class="nav-link text-white " href="index.html">
 
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -144,6 +145,7 @@
             <span class="nav-link-text ms-1">使い方</span>
           </a>
         </li>
+        -->
 
       </ul>
     </div>
@@ -218,7 +220,7 @@
               <div class="pt-1">
 
                 <h2>忘れ物を減らしましょう!</h2>
-                <h5>現在 xx 日間継続中!</h5>
+                <h5>現在 <span id="day">x</span> 日間継続中!</h5>
 
               </div>
             </div>
@@ -345,7 +347,9 @@
 
       getListData(getParamId())
 
+      getHistory(getParamId(),0)
 
+      setDisplayName("display_name");
 
   })
 

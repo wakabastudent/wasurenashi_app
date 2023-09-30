@@ -105,7 +105,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
 
-        <p style="text-align:center">2023/7/15</p>
+        <p style="text-align:center" id="display_name"></p>
 
 
 
@@ -124,7 +124,7 @@
             <span class="nav-link-text ms-1">トップページ</span>
           </a>
         </li>
-
+        <!--
         <li class="nav-item">
           <a class="nav-link text-white " href="index.html">
 
@@ -146,7 +146,7 @@
             <span class="nav-link-text ms-1">使い方</span>
           </a>
         </li>
-
+        -->    
       </ul>
     </div>
 
@@ -353,9 +353,10 @@
       //5秒後にローディング非表示
       setTimeout(function () {
           hide_loading();
-          getHistory(getParamId())
+          getHistory(getParamId(),1)
       }, 1000);
      
+      setDisplayName("display_name");
      
       let url = new URL(window.location.href);
   // URLSearchParamsオブジェクトを取得

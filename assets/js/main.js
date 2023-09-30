@@ -112,7 +112,7 @@ function setDisplayName(target) {
   let url = new URL(window.location.href);
   // URLSearchParamsオブジェクトを取得
   let params = url.searchParams;
-  $("#" + target).append(params.get('name'))
+  $("#" + target).append(params.get('name')+"さん")
 
 
 }
@@ -253,7 +253,7 @@ function createHistory() {
 }
 
 
-function getHistory(id){
+function getHistory(id,type){
   //TODO:本番用と切り替える
   //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
   const API_URL = "http://localhost:9000/.netlify/functions/GetResultHistory?id="+id;
@@ -265,10 +265,15 @@ function getHistory(id){
     })
     .then((data) => {
       var dayCount = data.continues;
-      var elem5 = document.getElementById("day");
-      elem5.textContent = dayCount
-      var elem6 = document.getElementById("day2");
-      elem6.textContent = dayCount
+      if(type == 0){
+        var elem5 = document.getElementById("day");
+        elem5.textContent = dayCount
+      }else{
+        var elem5 = document.getElementById("day");
+        elem5.textContent = dayCount
+        var elem6 = document.getElementById("day2");
+        elem6.textContent = dayCount
+      }      
     })
     .catch(error => {
       console.log(error);
