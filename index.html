@@ -337,6 +337,10 @@
     }
 
     $(function () {
+      var userid = getParamId();
+      if(userid === null){
+        location.href = "/wasurenashi_app/pages/sign-in.html"
+      }
       //ローディング表示
       show_loading();
 
