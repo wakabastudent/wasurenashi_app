@@ -340,6 +340,10 @@
       var userid = getParamId();
       if(userid === null){
         location.href = "/wasurenashi_app/pages/sign-in.html"
+      }else{
+        getListData(getParamId())
+
+        getHistory(getParamId(),0)
       }
       //ローディング表示
       show_loading();
@@ -349,9 +353,7 @@
           hide_loading();
       }, 1000);
 
-      getListData(getParamId())
 
-      getHistory(getParamId(),0)
 
       setDisplayName("display_name");
 
