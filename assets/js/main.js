@@ -18,8 +18,8 @@ function deleteRow(rowno) {
 //サーバと疎通して、ログインする
 function loginToServer() {
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/login";
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/Login";
+  //const API_URL = "http://localhost:9000/.netlify/functions/login";
 
 
   //入力内容を取得
@@ -62,8 +62,8 @@ function loginToServer() {
 //サーバと疎通して、ユーザを新規登録する
 function createAccout() {
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/AccountCreate";
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/AccountCreate";
+  //const API_URL = "http://localhost:9000/.netlify/functions/AccountCreate";
 
 
   //入力内容を取得
@@ -141,8 +141,8 @@ function getParamEmail() {
 //項目リストをDBから取得する
 function getListData(id){
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/GetList?id="+id;
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/GetList?id="+id;
+  //const API_URL = "http://localhost:9000/.netlify/functions/GetList?id="+id;
   fetch(API_URL, {
     method: "GET",
   })
@@ -166,8 +166,8 @@ function getListData(id){
 //項目登録
 function createItem() {
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/CreateItem";
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/CreateItem";
+  //const API_URL = "http://localhost:9000/.netlify/functions/CreateItem";
 
 
   //入力内容を取得
@@ -206,8 +206,8 @@ function createItem() {
 
 function createHistory() {
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/CreateListResult";
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/CreateListResult";
+  //const API_URL = "http://localhost:9000/.netlify/functions/CreateListResult";
 
 
   //入力内容を取得
@@ -255,8 +255,8 @@ function createHistory() {
 
 function getHistory(id,type){
   //TODO:本番用と切り替える
-  //const API_URL = "https://bejewelled-arithmetic-214844.netlify.app/.netlify/functions/SlackNotice";
-  const API_URL = "http://localhost:9000/.netlify/functions/GetResultHistory?id="+id;
+  const API_URL = "https://rad-sherbet-3eb86a.netlify.app/.netlify/functions/GetResultHistory?id="+id;
+  //const API_URL = "http://localhost:9000/.netlify/functions/GetResultHistory?id="+id;
   fetch(API_URL, {
     method: "GET",
   })
